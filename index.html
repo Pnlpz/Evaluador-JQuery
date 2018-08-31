@@ -112,17 +112,15 @@
 </main>
 
 <script>
-  var campoSelector = $("#camposelector").val();
-//   $("#ejecutar").click(function(){
-//   if (campoSelector === ''){
-//     alert('"Debe ingresar un selector jQuery!".')
-//   }
-// })
-
 
   function ejecutar(){
-    if (campoSelector === ''){
+    var campoSelector = $("#camposelector").val();
+    var n = campoSelector.startsWith("$");
+    if (campoSelector === '' || n === false){
       alert('"Debe ingresar un selector jQuery!".')
+    } else {
+      var result = eval(campoSelector);
+      result.fadeOut();
     }
 }
 </script>
